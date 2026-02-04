@@ -1,6 +1,7 @@
 import os
 import requests
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
@@ -13,6 +14,15 @@ if not OPENROUTER_API_KEY:
     raise RuntimeError("OPENROUTER_API_KEY not found in .env")
 
 app = FastAPI()
+
+# Enable CORS for browser extension requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Browser extensions can call from any origin
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ---- Request schema ----
 class ExplainRequest(BaseModel):
