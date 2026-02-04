@@ -1,0 +1,27 @@
+# Python
+backend/venv/
+backend/.venv/
+__pycache__/
+*.pyc
+*.pyo
+backend/.pytest_cache/
+
+# Environment variables / secrets (IMPORTANT - never commit!)
+backend/.env
+backend/.env.local
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+*.zip
+*.crx
+dist/
+build/
+
+.vscode/

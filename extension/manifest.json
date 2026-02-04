@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "QuickExplain MVP",
+  "description": "Instantly explains selected words or phrases on any webpage without leaving the page.",
+  "version": "0.1",
+
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["tooltip.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
