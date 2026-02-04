@@ -49,7 +49,7 @@ api.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 /* -------------------- BACKEND API CALL -------------------- */
 
 function callBackendExplain(text, context) {
-  const backendUrl = "https://extension-quickexplain-production.up.railway.app/explain";
+  const backendUrl = "http://localhost:8000/explain";
 
   console.log("[Background] Calling backend:", backendUrl);
 
